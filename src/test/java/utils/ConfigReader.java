@@ -9,7 +9,7 @@ import java.util.Properties;
 public class ConfigReader {
 
     private static Properties properties;
-
+    // Intial configuration for the project
     public static void initConfig() {
         properties = new Properties();
 
