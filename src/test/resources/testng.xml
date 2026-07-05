@@ -6,10 +6,11 @@
         <listener class-name="listeners.TestListener"/>
     </listeners>
 
-    <test name="Smoke Tests">
-        <classes>
-            <class name="tests.LoginTest"/>
-        </classes>
+    <test name="All tests">
+        <packages>
+            <package name="tests"/>
+            <package name="api"/>
+        </packages>
     </test>
 
 </suite>

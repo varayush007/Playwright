@@ -1,5 +1,6 @@
 package tests;
 
+import api.Pokemon;
 import base.BaseTest;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
@@ -10,6 +11,7 @@ import utils.JsonReader;
 public class LoginTest extends BaseTest {
 
     private LoginPage loginPage;
+    private Pokemon pokemon;
 
     @BeforeMethod(alwaysRun = true)
     public void initializePages() {
@@ -36,5 +38,13 @@ public class LoginTest extends BaseTest {
                 loginPage.isErrorMessageVisible(),
                 "Error message should be displayed."
         );
+    }
+
+    @Test
+    public String fetchPokemonList(){
+        pokemon = new Pokemon();
+        String result = fetchPokemonList();
+
+        return result;
     }
 }
