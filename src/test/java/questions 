@@ -1,0 +1,131 @@
+Problem 1: Users And Todos API
+APIs:
+GET https://jsonplaceholder.typicode.com/users
+GET https://jsonplaceholder.typicode.com/todos
+Tasks:
+Part 1: Fetch all users and validate status code 200.
+Part 2: Validate users response contains exactly 10 users.
+Part 3: Validate every user has id, name, username, email, phone, website.
+Part 4: Create Map<Integer, String> userMap where key = userId and value = userName.
+Part 5: Fetch all todos and validate status code 200.
+Part 6: Validate todos response contains exactly 200 todos.
+Part 7: Validate every todo has userId, id, title, completed.
+Part 8: Validate every todo.userId exists in users API.
+Part 9: Group todos by userId.
+Part 10: Print total todos per user.
+Part 11: Print completed todos count per user.
+Part 12: Find user with maximum completed todos.
+Part 13: Print final summary.
+
+
+
+Problem 2: Users And Albums API
+APIs:
+GET https://jsonplaceholder.typicode.com/users
+GET https://jsonplaceholder.typicode.com/albums
+GET https://jsonplaceholder.typicode.com/photos
+Tasks:
+Part 1: Fetch users and validate status code 200.
+Part 2: Validate users response contains exactly 10 users.
+Part 3: Create userMap with userId -> userName.
+Part 4: Fetch albums and validate status code 200.
+Part 5: Validate every album has userId, id, title.
+Part 6: Validate every album.userId exists in users API.
+Part 7: Group albums by userId.
+Part 8: Print album count per user.
+Part 9: Fetch photos and validate status code 200.
+Part 10: Validate every photo has albumId, id, title, url, thumbnailUrl.
+Part 11: Validate photo url starts with http.
+Part 12: Group photos by albumId.
+Part 13: Print photo count per album.
+Part 14: Find album having maximum photos.
+
+
+
+Problem 3: Products API
+API:
+GET https://dummyjson.com/products
+Tasks:
+Part 1: Fetch products and validate status code 200.
+Part 2: Validate response contains products, total, skip, limit.
+Part 3: Validate products list is not empty.
+Part 4: Validate every product has id, title, price, discountPercentage, rating, stock, brand, category.
+Part 5: Validate price is greater than 0.
+Part 6: Validate rating is between 0 and 5.
+Part 7: Create Map<Integer, String> productMap where key = productId and value = productTitle.
+Part 8: Group products by category.
+Part 9: Print product count per category.
+Part 10: Find most expensive product.
+Part 11: Find cheapest product.
+Part 12: Find products with rating greater than 4.5.
+Part 13: Calculate average price per category.
+Part 14: Print final summary.
+
+
+
+
+Problem 4: Carts And Products API
+APIs:
+GET https://dummyjson.com/products
+GET https://dummyjson.com/carts
+Tasks:
+Part 1: Fetch all products and validate status code 200.
+Part 2: Create productMap with productId -> productTitle.
+Part 3: Fetch all carts and validate status code 200.
+Part 4: Validate carts list is not empty.
+Part 5: Validate every cart has id, products, total, discountedTotal, userId.
+Part 6: Validate every cart product has id, title, price, quantity, total.
+Part 7: Validate every cart product id exists in products API.
+Part 8: Group carts by userId.
+Part 9: Print total carts per user.
+Part 10: Find cart with maximum total amount.
+Part 11: Find product with maximum quantity across all carts.
+Part 12: Validate cart total is greater than 0.
+Part 13: Print final summary.
+
+
+
+
+Problem 5: Countries API
+API:
+GET https://restcountries.com/v3.1/all
+Tasks:
+Part 1: Fetch all countries and validate status code 200.
+Part 2: Validate response is not empty.
+Part 3: Validate every country has name, region, population.
+Part 4: Validate population is not negative.
+Part 5: Create Map<String, Long> countryPopulationMap where key = country name and value = population.
+Part 6: Group countries by region.
+Part 7: Print country count per region.
+Part 8: Find top 10 countries by population.
+Part 9: Find region with maximum number of countries.
+Part 10: Find region with highest total population.
+Part 11: Print countries having population greater than 100 million.
+Part 12: Print final summary.
+
+
+
+
+Problem 6: ReqRes Users API
+APIs:
+GET https://reqres.in/api/users?page=1
+GET https://reqres.in/api/users?page=2
+GET https://reqres.in/api/users/{id}
+Tasks:
+Part 1: Fetch page 1 users and validate status code 200.
+Part 2: Validate page, per_page, total, total_pages fields.
+Part 3: Validate every user has id, email, first_name, last_name, avatar.
+Part 4: Fetch page 2 users and validate status code 200.
+Part 5: Combine users from page 1 and page 2.
+Part 6: Validate total combined users equals total from API.
+Part 7: Create Map<Integer, String> userEmailMap where key = id and value = email.
+Part 8: Validate every email ends with reqres.in.
+Part 9: Fetch single user using one id from the map.
+Part 10: Validate single user response matches data from list response.
+Part 11: Search users by first_name.
+Part 12: Print final summary.
+
+
+
+
+

@@ -15,12 +15,15 @@ public class JsonPlaceHolder {
     Map<Integer,String>userMap = new HashMap<>();
     List<Integer> userIds = new ArrayList<>();
     Map<Integer, List<Map<String, Object>>> postsByUser = new HashMap<>();
+    List<Map<String, Object>> postDetails = new ArrayList<>();
+    int keywordSearchCount;
 
     private void validateNotBlank(Map<String,?>user, String field){
         Assert.assertNotNull(user.get(field),field + " should not be null");
         Assert.assertFalse(user.get(field).toString().isBlank(),field + " should not be blank");
     }
 
+    //Part 1
     @Test
     public void validateUserDetails(){
         Response response = given()
@@ -49,6 +52,7 @@ public class JsonPlaceHolder {
         }
     }
 
+    //Part 2
     @Test
     public void validateDataFields() {
         Response response = given()
@@ -58,7 +62,7 @@ public class JsonPlaceHolder {
                 .then()
                 .statusCode(200)
                 .extract().response();
-        List<Map<String, Object>> postDetails = response.jsonPath().getList("$");
+        postDetails = response.jsonPath().getList("$");
         Assert.assertNotNull(postDetails, "post details should not be null");
         Assert.assertEquals(postDetails.size(), 100, "posts count mismatch");
 
@@ -82,6 +86,7 @@ public class JsonPlaceHolder {
         }
     }
 
+    //Part 3
     @Test(dependsOnMethods = {"validateUserDetails", "validateDataFields"})
     public void crossAPIValidation(){
          for(Integer postUserID : userIds){
@@ -89,18 +94,82 @@ public class JsonPlaceHolder {
         }
     }
 
+    //Part 4
     @Test(dependsOnMethods = {"validateUserDetails", "validateDataFields"})
     public void groupPostByUser(){
+        int maximum = 0;
         for(Integer userId: postsByUser.keySet()){
             String userName = userMap.get(userId);
             int totalPosts = postsByUser.get(userId).size();
-
             System.out.println("User ID: " + userId);
             System.out.println("User Name: " + userName);
             System.out.println("Total Posts: " + totalPosts);
             System.out.println("--------------------------------");
+//            Part 5: Post Count Validation
+//            Validate that each user has exactly 10 posts.
+            Assert.assertEquals(totalPosts,10,"Expected 10 posts for user " + userName + " but found " + totalPosts);
+            maximum = Integer.max(maximum,totalPosts);
         }
 
+//        Part 6: Maximum Posts
+//        Find the user or users with the maximum number of posts.
+        for(Integer userId: postsByUser.keySet()){
+            String userName = userMap.get(userId);
+            int totalPosts = postsByUser.get(userId).size();
+            if(totalPosts == maximum) {
+                System.out.println("User ID: " + userId);
+                System.out.println("User Name: " + userName);
+                System.out.println("Post Count: " + totalPosts);
+            }
+        }
+
+    }
+
+    //Part 7
+    @Test(dependsOnMethods = {"validateUserDetails", "validateDataFields"})
+    public void keywordSearchInPosts() {
+        String keyword = "qui";
+        keywordSearchCount = 0;
+
+        for (Map<String, Object> post : postDetails) {
+            String title = post.get("title").toString();
+            String body = post.get("body").toString();
+
+            if (title.contains(keyword) || body.contains(keyword)) {
+                Integer postId = (Integer) post.get("id");
+                Integer userId = (Integer) post.get("userId");
+                String userName = userMap.get(userId);
+
+                System.out.println("Post ID: " + postId);
+                System.out.println("User ID: " + userId);
+                System.out.println("User Name: " + userName);
+                System.out.println("Title: " + title);
+                System.out.println("--------------------------------");
+                keywordSearchCount++;
+            }
+        }
+
+        Assert.assertTrue(keywordSearchCount > 0, "At least one post should match the keyword: " + keyword);
+    }
+
+    //Part 8
+    @Test(dependsOnMethods = {"validateUserDetails", "validateDataFields", "crossAPIValidation", "groupPostByUser", "keywordSearchInPosts"})
+    public void finalSummary() {
+        boolean usersHavingExactlyTenPosts = true;
+
+        for (Integer userId : userMap.keySet()) {
+            int totalPosts = postsByUser.getOrDefault(userId, Collections.emptyList()).size();
+            if (totalPosts != 10) {
+                usersHavingExactlyTenPosts = false;
+                break;
+            }
+        }
+
+        System.out.println("Total Users: " + userMap.size());
+        System.out.println("Total Posts: " + postDetails.size());
+        System.out.println("Users with valid post mapping: " + postsByUser.size());
+        System.out.println("Users having exactly 10 posts: " + usersHavingExactlyTenPosts);
+        System.out.println("Keyword Search Count: " + keywordSearchCount);
     }
 
 }
