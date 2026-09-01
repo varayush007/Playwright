@@ -1,5 +1,7 @@
 package pages;
 import com.microsoft.playwright.Page;
+import org.testng.asserts.SoftAssert;
+
 public class LoginPage {
 
     private final Page page;
@@ -9,6 +11,9 @@ public class LoginPage {
     private static String lastName = "//input[@id='lastname']";
     private static String userName = "//input[@id='userName']";
     private static String password = "//input[@id='password']";
+    private static String registerBtn = "//button[@id='register']";
+    private static String goToLogin = "//button[@id='gotologin']";
+    private static String loginBtn = "//button[@id='login']";
 
     public LoginPage(Page page){
         this.page = page;
@@ -28,6 +33,17 @@ public class LoginPage {
     public void fillPassword(String pass){
         page.locator(password).fill(pass);
     }
+    public void clickRegisterBtn(){
+        page.locator(registerBtn).click();
+    }
+
+    public void backToLogin(){
+        page.locator(goToLogin).click();
+    }
+
+    public void clickLoginBtn(){
+        page.locator(loginBtn).click();
+    }
 
     public void fillNewUserForm(String firstname, String lastname, String username, String pass){
         fillFirstName(firstname);
@@ -37,5 +53,31 @@ public class LoginPage {
     }
     public void navigateToURL(){
         page.navigate("https://demoqa.com/login");
+    }
+
+    public void fillLoginInfo(String userName, String password){
+        fillUserName(userName);
+        fillPassword(password);
+    }
+
+    public void dummy(SoftAssert sa){
+        page.navigate("https://www.saucedemo.com/");
+        page.locator("#user-name").fill("standard_user");
+        page.locator("#password").fill("secret_sauce");
+        page.locator("#login-button").click();
+        sa.assertTrue(
+                page.locator(".title").isVisible()
+        );
+    }
+    public void producttest(SoftAssert sa){
+        page.navigate("https://www.saucedemo.com/");
+
+        page.locator("#user-name").fill("standard_user");
+        page.locator("#password").fill("secret_sauce");
+        page.locator("#login-button").click();
+
+        sa.assertTrue(
+                page.locator(".inventory_list").isVisible()
+        );
     }
 }

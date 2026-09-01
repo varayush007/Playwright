@@ -9,7 +9,8 @@ public class PlaywrightFactory {
     private static final ThreadLocal<Browser>browser = new ThreadLocal<>();
     private static final ThreadLocal<BrowserContext>browserContext = new ThreadLocal<>();
     private static final ThreadLocal<Page>page= new ThreadLocal<>();
-    public static void initBrowser() throws FileNotFoundException {
+
+    public static void initBrowser()  {
         String browserName = ConfigReader.get("browser");
         boolean headless = Boolean.parseBoolean(ConfigReader.get("headless"));
         Playwright pw = Playwright.create();
@@ -25,56 +26,84 @@ public class PlaywrightFactory {
         browser.set(b);
     }
 
-    public static Browser getBrowser() throws FileNotFoundException {
+    public static Browser getBrowser() {
         if(browser.get() == null) {
             initBrowser();
         }
         return browser.get();
     }
 
-    public static void setContext(BrowserContext ctx) {
-        browserContext.set(ctx);
+    public static void createContextAndPage()  {
+
+        BrowserContext context = getBrowser().newContext(new Browser.NewContextOptions()
+                        .setViewportSize(null));
+
+        Page newPage = context.newPage();
+
+        browserContext.set(context);
+        page.set(newPage);
     }
+
+
+    // =========================
+    // Get Context
+    // =========================
 
     public static BrowserContext getContext() {
         return browserContext.get();
     }
 
-    public static void setPage(Page p) {
-        page.set(p);
-    }
+
+    // =========================
+    // Get Page
+    // =========================
 
     public static Page getPage() {
         return page.get();
     }
 
-    public static void removePage() {
-        page.remove();
-    }
 
-    public static void removeContext() {
-        browserContext.remove();
-    }
+    // =========================
+    // Close Context + Page
+    // =========================
 
-    public static void closeBrowser(){
-        Page p = page.get();
-        if (p != null) {
-            p.close();
+    public static void closeContext() {
+
+        Page currentPage = getPage();
+
+        if (currentPage != null) {
+            currentPage.close();
         }
-        BrowserContext ctx = browserContext.get();
-        if (ctx != null) {
-            ctx.close();
+
+        BrowserContext currentContext = getContext();
+
+        if (currentContext != null) {
+            currentContext.close();
         }
-        Browser b = browser.get();
-        if (b != null) {
-            b.close();
-        }
-        Playwright pw = playwright.get();
-        if (pw != null) {
-            pw.close();
-        }
+
         page.remove();
         browserContext.remove();
+    }
+
+
+    // =========================
+    // Close Browser
+    // =========================
+
+    public static void closeBrowser() {
+
+        Browser currentBrowser = browser.get();
+
+        if (currentBrowser != null) {
+            currentBrowser.close();
+        }
+
+        Playwright currentPlaywright = playwright.get();
+
+        if (currentPlaywright != null) {
+            currentPlaywright.close();
+        }
+
         browser.remove();
         playwright.remove();
     }

@@ -1,5 +1,4 @@
 package tests;
-
 import Base.Base;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -10,7 +9,7 @@ import java.lang.reflect.Method;
 
 import org.apache.commons.lang3.RandomStringUtils;
 
-public class Registration extends Base {
+public class xyz extends Base {
     private final ThreadLocal<LoginPage> loginPage = new ThreadLocal<>();
     private final ThreadLocal<SoftAssert> sa = new ThreadLocal<>();
 

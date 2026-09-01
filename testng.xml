@@ -4,8 +4,8 @@
     <test name="RegressionTests">
         <classes>
             <!-- add your test classes here as you create them, e.g.: -->
-            <!-- <class name="tests.LoginTest"/> -->
-            <!-- <class name="tests.SignupTest"/> -->
+             <class name="tests.Registration"/>
+             <class name="tests.xyz"/>
         </classes>
     </test>
 </suite>
