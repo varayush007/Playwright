@@ -42,7 +42,7 @@ public class LoginPage {
     }
 
     public void clickLoginBtn(){
-        page.locator(goToLogin).click();
+        page.locator(loginBtn).click();
     }
 
     public void fillNewUserForm(String firstname, String lastname, String username, String pass){
