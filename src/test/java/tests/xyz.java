@@ -3,15 +3,11 @@ import Base.Base;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
-import pages.LoginPage;
-import static factory.PlaywrightFactory.getPage;
 import java.lang.reflect.Method;
 
 import org.apache.commons.lang3.RandomStringUtils;
 
 public class xyz extends Base {
-    private final ThreadLocal<LoginPage> loginPage = new ThreadLocal<>();
-    private final ThreadLocal<SoftAssert> sa = new ThreadLocal<>();
 
     @BeforeMethod
     public void initializePages(Method method) {
@@ -19,37 +15,32 @@ public class xyz extends Base {
                 "Test: " + method.getName() +
                         " | Thread ID: " + Thread.currentThread().getId()
         );
-        loginPage.set(new LoginPage(getPage()));
-        sa.set(new SoftAssert());
     }
 
     @Test
     public void newUserRegistration() {
-        LoginPage login = loginPage.get();
-        SoftAssert softAssert = sa.get();
-        login.navigateToURL();
-        login.clickNewUser();
+        SoftAssert sa = new SoftAssert();
+        pages().loginPage().navigateToURL();
+        pages().loginPage().clickNewUser();
         String username = RandomStringUtils.randomAlphanumeric(8);
         String password = RandomStringUtils.randomAlphanumeric(6);
-        login.fillNewUserForm("Ayush", "Varshney", username, password);
-        login.clickRegisterBtn();
-        login.backToLogin();
-        login.fillLoginInfo(username, password);
-        login.clickLoginBtn();
-        softAssert.assertAll();
+        pages().loginPage().fillNewUserForm("Ayush", "Varshney", username, password);
+        pages().loginPage().clickRegisterBtn();
+        pages().loginPage().backToLogin();
+        pages().loginPage().fillLoginInfo(username, password);
+        pages().loginPage().clickLoginBtn();
+        sa.assertAll();
     }
 
     @Test
     public void validLoginTest() {
-        LoginPage login = loginPage.get();
-        SoftAssert softAssert = sa.get();
-        login.dummy(softAssert);
+        SoftAssert sa = new SoftAssert();
+        pages().loginPage().dummy(sa);
     }
 
     @Test
     public void verifyProductPage() {
-        LoginPage login = loginPage.get();
-        SoftAssert softAssert = sa.get();
-        login.producttest(softAssert);
+        SoftAssert sa = new SoftAssert();
+        pages().loginPage().producttest(sa);
     }
 }
