@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="e8932f63-df3d-45a9-90d5-d34d16f891d0" name="Changes" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="EmbeddingIndexingInfo">
+    <option name="cachedIndexableFilesCount" value="36" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="McpProjectServerCommands">
+    <commands />
+    <urls />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0,
+  &quot;fromUser&quot;: false
+}</component>
+  <component name="ProjectId" id="3LCbcz391GptK6AUVhgdvkNR3YK" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.MCP Project settings loaded": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "TestNG.BankAccountTest.sequenceOfOperations_endsWithCorrectBalance.executor": "Run",
+    "TestNG.CollectionAlgosTest.topK_doesNotMutateInput.executor": "Run",
+    "TestNG.TextUtilsTest.invalidPalindrome.executor": "Run",
+    "TestNG.TextUtilsTest.nullPalindrome.executor": "Run",
+    "TestNG.TextUtilsTest.nullSlugify.executor": "Run",
+    "TestNG.TextUtilsTest.validPalindrome.executor": "Run",
+    "TestNG.TextUtilsTest.validPallindrome.executor": "Run",
+    "TestNG.TextUtilsTest.validPassword.executor": "Run",
+    "TestNG.TextUtilsTest.validSlugify.executor": "Run",
+    "TestNG.TextUtilsTest.wordCnt.executor": "Run",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
+    "git-widget-placeholder": "master",
+    "junie.onboarding.icon.badge.shown": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/Users/varayush007/IdeaProjects/sdet-practice",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
+    "to.speed.mode.migration.done": "true",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/test/java/com/prep/sdet" />
+    </key>
+  </component>
+  <component name="RunManager" selected="TestNG.CollectionAlgosTest.topK_doesNotMutateInput">
+    <configuration name="BankAccountTest.sequenceOfOperations_endsWithCorrectBalance" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="sdet-practice" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.prep.sdet.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.prep.sdet" />
+      <option name="MAIN_CLASS_NAME" value="com.prep.sdet.BankAccountTest" />
+      <option name="METHOD_NAME" value="sequenceOfOperations_endsWithCorrectBalance" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CollectionAlgosTest.topK_doesNotMutateInput" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="sdet-practice" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.prep.sdet.solutions.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.prep.sdet.solutions" />
+      <option name="MAIN_CLASS_NAME" value="com.prep.sdet.solutions.CollectionAlgosTest" />
+      <option name="METHOD_NAME" value="topK_doesNotMutateInput" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TextUtilsTest.validPalindrome" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="sdet-practice" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.prep.sdet.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.prep.sdet" />
+      <option name="MAIN_CLASS_NAME" value="com.prep.sdet.TextUtilsTest" />
+      <option name="METHOD_NAME" value="validPalindrome" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TextUtilsTest.validPassword" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="sdet-practice" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.prep.sdet.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.prep.sdet" />
+      <option name="MAIN_CLASS_NAME" value="com.prep.sdet.TextUtilsTest" />
+      <option name="METHOD_NAME" value="validPassword" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TextUtilsTest.wordCnt" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="sdet-practice" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.prep.sdet.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.prep.sdet" />
+      <option name="MAIN_CLASS_NAME" value="com.prep.sdet.TextUtilsTest" />
+      <option name="METHOD_NAME" value="wordCnt" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="TestNG.CollectionAlgosTest.topK_doesNotMutateInput" />
+        <item itemvalue="TestNG.BankAccountTest.sequenceOfOperations_endsWithCorrectBalance" />
+        <item itemvalue="TestNG.TextUtilsTest.validPalindrome" />
+        <item itemvalue="TestNG.TextUtilsTest.wordCnt" />
+        <item itemvalue="TestNG.TextUtilsTest.validPassword" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e8932f63-df3d-45a9-90d5-d34d16f891d0" name="Changes" comment="" />
+      <created>1792961079579</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1792961079579</updated>
+      <workItem from="1792961080599" duration="12489000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
